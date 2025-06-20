@@ -237,7 +237,8 @@ $model->insert([
 php spark db:seed UserSeeder
 ```
 
-![alt text](image-4.png)
+![image](https://github.com/user-attachments/assets/906e5be4-a829-42c0-ae3d-6b4cdae2efff)
+
 ---
 
 ## Uji Coba Login
