@@ -448,8 +448,10 @@ public function admin_index() {
 }
 ```
 
-![alt text](Gambar/image-18.png)
-![alt text](Gambar/image-19.png)
+![image](https://github.com/user-attachments/assets/1008b48e-3b3a-4978-a565-63c2a7bfdb80)
+
+![image](https://github.com/user-attachments/assets/5a9b59cb-3ef1-46de-8b05-43239ea5fddf)
+
 
 ---
 
@@ -464,7 +466,7 @@ Tambahkan form pencarian sebelum tabel artikel:
 </form>
 ```
 
-![alt text](image-16.png)
+![image](https://github.com/user-attachments/assets/f60f5dce-db03-43c8-b3b5-770c0242ffff)
 
 ---
 
