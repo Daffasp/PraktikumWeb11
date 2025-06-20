@@ -325,7 +325,8 @@ Tambahkan method `logout()` pada Controller `User`.
     }
 ```
 
-![alt text](image-8.png)
+![image](https://github.com/user-attachments/assets/36eae67f-3bd5-4660-9fe4-179c0abd853c)
+
 
 ---
 
