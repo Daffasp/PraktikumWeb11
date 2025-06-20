@@ -342,11 +342,13 @@ Tambahkan method `logout()` pada Controller `User`.
 
 3. Jika berhasil, akan redirect ke halaman admin.
 
-![alt text](image-10.png)
+![image](https://github.com/user-attachments/assets/478a9e5b-27d8-405c-a213-b57073d32d8b)
+
 
 4. Coba akses halaman admin tanpa login: akan diarahkan ke login.
 
-![alt text](image-11.png)
+![image](https://github.com/user-attachments/assets/997d8b8a-8b66-429f-9ca8-6e9596ce16e2)
+
 
 ---
 
