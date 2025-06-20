@@ -88,7 +88,8 @@ class UserModel extends Model
 }
 ```
 
-![alt text](image-1.png)
+![image](https://github.com/user-attachments/assets/4ffc57e4-cf8d-4721-a69b-80ae7aed8354)
+
 
 ---
 
