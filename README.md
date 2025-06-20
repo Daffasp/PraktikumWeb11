@@ -407,7 +407,8 @@ public function admin_index() {
 }
 ```
 
-![alt text](image-12.png)
+![image](https://github.com/user-attachments/assets/67eaef42-1304-4236-a0a3-26608412f678)
+
 
 ---
 
@@ -421,8 +422,8 @@ Buka file `app/Views/artikel/admin_index.php`, lalu tambahkan ini di bawah tabel
 
 Ini akan otomatis menampilkan link navigasi halaman.
 
-![alt text](image-13.png)
-![alt text](image-14.png)
+![image](https://github.com/user-attachments/assets/7052337c-36b1-4f01-8c5e-e9b5ba16ba47)
+
 
 ---
 
