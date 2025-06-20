@@ -150,7 +150,8 @@ class User extends BaseController
 
 ```
 
-![alt text](image-2.png)
+![image](https://github.com/user-attachments/assets/db1ebf6c-2331-4b28-a98c-9ef5e0de1288)
+
 
 ---
 
