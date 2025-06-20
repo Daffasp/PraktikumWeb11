@@ -337,7 +337,8 @@ Tambahkan method `logout()` pada Controller `User`.
    - Email: `admin@email.com`
    - Password: `admin123`
 
-![alt text](image-9.png)
+![image](https://github.com/user-attachments/assets/24dc999d-7e8b-4e29-96b0-6ca7082219f8)
+
 
 3. Jika berhasil, akan redirect ke halaman admin.
 
