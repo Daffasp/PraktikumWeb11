@@ -1,6 +1,10 @@
 <?php
+
 namespace App\Controllers;
+
 use App\Models\ArticleModel;
+use CodeIgniter\Exceptions\PageNotFoundException;
+
 class Article extends BaseController
 {
     public function index()
@@ -8,102 +12,106 @@ class Article extends BaseController
         $title = "Article Lists";
         $model = new ArticleModel();
         $article = $model->findAll();
+
         return view("article/index", compact("article", "title"));
     }
+
     public function view($slug)
     {
         $model = new ArticleModel();
-        $article = $model
-            ->where([
-                "slug" => $slug,
-            ])
-            ->first();
+        $article = $model->where("slug", $slug)->first();
+
         if (!$article) {
             throw PageNotFoundException::forPageNotFound();
         }
+
         $title = $article["title"];
         return view("article/detail", compact("article", "title"));
     }
+
     public function admin_index()
     {
-        $title = "Article Lists";
+        $title = "Manage Articles";
         $model = new ArticleModel();
         $article = $model->findAll();
+
         return view("article/admin_index", compact("article", "title"));
     }
+
     public function add()
-{
-    $validation = \Config\Services::validation();
-    $validation->setRules([
-        "title" => "required",
-        "content" => "required",
-        "category" => "required",
-    ]);
+    {
+        $validation = \Config\Services::validation();
+        $validation->setRules([
+            "title" => "required",
+            "content" => "required",
+            "category" => "required",
+        ]);
 
-    $isDataValid = $validation->withRequest($this->request)->run();
+        if ($validation->withRequest($this->request)->run()) {
+            $article = new ArticleModel();
+            $title = $this->request->getPost("title");
+            $slug = url_title($title, '-', true);
 
-    if ($isDataValid) {
+            // Jika slug sudah ada, tambahkan timestamp
+            if ($article->where("slug", $slug)->countAllResults() > 0) {
+                $slug .= '-' . time();
+            }
+
+            $article->insert([
+                "title" => $title,
+                "content" => $this->request->getPost("content"),
+                "slug" => $slug,
+                "category" => $this->request->getPost("category"),
+                "created_at" => date("Y-m-d H:i:s"),
+            ]);
+
+            return redirect()->to("/admin/article");
+        }
+
+        $title = "Add Article";
+        return view("article/form_add", compact("title"));
+    }
+
+    public function edit($id)
+    {
         $article = new ArticleModel();
-        $title = $this->request->getPost("title");
-        $slug = url_title($title, '-', true);
-        $exists = $article->where("slug", $slug)->countAllResults();
-        if ($exists > 0) {
-            $slug .= '-' . time();
-        }
-
-        $article->insert([
-            "title" => $title,
-            "content" => $this->request->getPost("content"),
-            "slug" => $slug,
-            "category" => $this->request->getPost("category"),
-            "created_at" => date("Y-m-d H:i:s"),
+        $validation = \Config\Services::validation();
+        $validation->setRules([
+            "title" => "required",
+            "content" => "required",
+            "category" => "required",
         ]);
 
-        return redirect()->to("admin/article");
-    }
+        if ($validation->withRequest($this->request)->run()) {
+            $title = $this->request->getPost("title");
+            $slug = url_title($title, '-', true);
 
-    $title = "Add Article";
-    return view("article/form_add", compact("title"));
-}
-public function edit($id)
-{
-    $article = new ArticleModel();
-    $validation = \Config\Services::validation();
-    $validation->setRules([
-        "title" => "required",
-        "content" => "required",
-        "category" => "required",
-    ]);
+            // Cek slug unik
+            if ($article->where("slug", $slug)->where("id !=", $id)->countAllResults() > 0) {
+                $slug .= '-' . time();
+            }
 
-    $isDataValid = $validation->withRequest($this->request)->run();
+            $article->update($id, [
+                "title" => $title,
+                "content" => $this->request->getPost("content"),
+                "slug" => $slug,
+                "category" => $this->request->getPost("category"),
+            ]);
 
-    if ($isDataValid) {
-        $title = $this->request->getPost("title");
-        $slug = url_title($title, '-', true);
-        $exists = $article->where("slug", $slug)->where("id !=", $id)->countAllResults();
-        if ($exists > 0) {
-            $slug .= '-' . time();
+            return redirect()->to("/admin/article");
         }
 
-        $article->update($id, [
-            "title" => $title,
-            "content" => $this->request->getPost("content"),
-            "slug" => $slug,
-            "category" => $this->request->getPost("category"),
-        ]);
+        $data = $article->find($id);
+        $title = "Edit Article";
 
-        return redirect()->to("admin/article");
+        return view("article/form_edit", compact("title", "data"));
     }
-
-    $data = $article->where("id", $id)->first();
-    $title = "Edit Article";
-    return view("article/form_edit", compact("title", "data"));
-}
 
     public function delete($id)
     {
         $article = new ArticleModel();
         $article->delete($id);
-        return redirect("admin/article");
+
+        return redirect()->to("/admin/article");
     }
 }

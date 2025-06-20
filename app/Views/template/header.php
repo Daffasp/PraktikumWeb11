@@ -3,8 +3,7 @@
   <head>
     <meta charset="UTF-8">
     <title> <?= $title; ?> </title>
-    <link rel="stylesheet" href="
-	<?= base_url('/style.css');?>">
+    <link rel="stylesheet" href="<?= base_url('/style.css'); ?>">
   </head>
   <body>
     <div id="container">
@@ -19,6 +18,10 @@
         <a href="<?= base_url('/contact');?>">Contact</a>
         <a href="<?= base_url('/faqs');?>">FAQs</a>
         <a href="<?= base_url('/tos');?>">TOS</a>
+
+        <?php if (session()->get('logged_in')) : ?>
+          <a href="<?= base_url('/user/logout'); ?>">Logout</a>
+        <?php endif; ?>
       </nav>
       <section id="wrapper">
         <section id="main">
