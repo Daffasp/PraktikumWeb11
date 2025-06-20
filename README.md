@@ -309,7 +309,7 @@ Edit `app/Config/Routes.php` untuk menyesuaikan halaman yang dilindungi.
 $routes->get('admin/artikel', 'Admin\Artikel::index', ['filter' => 'auth']);
 ```
 
-![alt text](image-7.png)
+![image](https://github.com/user-attachments/assets/903a3698-4f36-4aad-b08e-c70ea09435e5)
 
 ---
 
