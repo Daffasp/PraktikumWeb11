@@ -296,7 +296,8 @@ Filter digunakan untuk melindungi halaman yang hanya bisa diakses jika user suda
 ```php
 'auth' => \App\Filters\Auth::class
 ```
-![alt text](image-6.png)
+![image](https://github.com/user-attachments/assets/e24e8c8a-e15b-498e-be0c-849c2a63495d)
+
 
 ---
 
