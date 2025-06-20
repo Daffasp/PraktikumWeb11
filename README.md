@@ -17,14 +17,6 @@ Dalam praktikum ini, mahasiswa diharapkan memahami konsep autentikasi, paginatio
 
 Laporan ini juga dilengkapi dengan screenshot hasil implementasi untuk mendukung pemahaman serta sebagai bukti keberhasilan dalam menyelesaikan setiap langkah praktikum. Dengan menyelesaikan tugas ini, mahasiswa diharapkan mampu membangun aplikasi berbasis web dengan fitur yang lebih lengkap dan interaktif.
 
-## 🔗 Daftar Isi
-
-| No  | Praktikum                                     | Link                                                                           |
-| --- | --------------------------------------------- | ------------------------------------------------------------------------------ |
-| 4   | Praktikum 4: Framework Lanjutan (Modul Login) | [Klik di sini](#praktikum-4-framework-lanjutan-modul-login--pemrograman-web-2) |
-| 5   | Praktikum 5: Pagination dan Pencarian         | [Klik di sini](#praktikum-5-pagination-dan-pencarian--pemrograman-web-2)       |
-| 6   | Praktikum 6: Upload File Gambar               | [Klik di sini](#praktikum-6-upload-file-gambar--pemrograman-web-2)             |
-
 # Praktikum 4: Framework Lanjutan (Modul Login) — Pemrograman Web 2
 
 ## 📌 Tujuan Praktikum
