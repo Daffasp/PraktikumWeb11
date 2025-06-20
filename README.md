@@ -553,7 +553,8 @@ public function add()
 }
 ```
 
-![alt text](Gambar/image-22.png)
+![image](https://github.com/user-attachments/assets/51da9d47-1e7e-44a9-ae9f-4c777a111592)
+
 
 ---
 
