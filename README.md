@@ -98,7 +98,7 @@ Fitur ini menguji apakah admin dapat mengubah data artikel **termasuk mengganti 
 ## 🗑️ Testing: Menghapus Artikel
 
 Fitur ini menguji apakah admin dapat **menghapus artikel** yang sudah ada, dan memastikan data benar-benar terhapus dari database.
-##Sebelum
+## Sebelum
 ![image](https://github.com/user-attachments/assets/2ce937dd-3260-47db-b737-92ca7cb4fbc8)
-##Sesudah
+## Sesudah
 ![image](https://github.com/user-attachments/assets/02e9b806-8a64-46b3-b6dc-aa7235386b8a)
