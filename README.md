@@ -12,6 +12,20 @@
 | Praktikum     | 7 s/d 11                   |
 
 ---
+# 📘 Daftar Isi Praktikum Web Programming (CI4 + VueJS)
+
+Berikut adalah daftar repository untuk seluruh praktikum Web Programming:
+
+## 🔹 Praktikum 1 - 3
+[🧩 WebCI4 Lab 1 - 3](https://github.com/Daffasp/Lab7Websiteee)
+
+## 🔹 Praktikum 4 - 6
+[🧩 WebCI4 Lab 4 - 6](https://github.com/Daffasp/Lab11_ci4)
+
+## 🔹 Praktikum 8 - VueJS Final
+[🧩 VueJS + CI4 Final Project](https://github.com/Daffasp/Lab_vuejs)
+
+---
 
 ## 📁 Pembuatan dan Relasi Tabel Kategori
 
