@@ -57,6 +57,22 @@ Untuk menampilkan data artikel bersamaan dengan data kategorinya, kita perlu mem
 ![image](https://github.com/user-attachments/assets/ed53f2a7-4264-4516-bcc2-d81b00c40c9d)
 ![image](https://github.com/user-attachments/assets/8d8efeda-34c2-4e87-93d5-f7178cbee70f)
 
+## 🖼️ Memodifikasi View: `view/artikel/index.php`
+
+Setelah kita menambahkan relasi artikel ↔ kategori di model dan controller, kita perlu menampilkan nama kategori di tampilan `index.php`.
+![image](https://github.com/user-attachments/assets/ae46d133-70b2-45dc-a542-7486706d9cee)
+
+## 🖥️ Memodifikasi View: `view/artikel/admin_index.php`
+
+Setelah menghubungkan tabel artikel dengan kategori, kita juga perlu menyesuaikan tampilan admin (`admin_index.php`) agar menampilkan kategori pada daftar artikel.
+![image](https://github.com/user-attachments/assets/9441f98b-280c-4c6e-855f-58d601c4b5b3)
+![image](https://github.com/user-attachments/assets/ee082b04-eaf9-4ee3-a775-620cb8f74291)
+![image](https://github.com/user-attachments/assets/591efb1c-24cf-47fa-8964-640720c65b30)
+
+## ➕ Memodifikasi View: `view/artikel/form_add.php`
+
+Form ini digunakan untuk **menambahkan artikel baru**. Kita akan memodifikasi form agar admin dapat memilih **kategori** artikel dari dropdown yang terhubung dengan tabel `kategori`.
+![image](https://github.com/user-attachments/assets/a75d52d4-2f53-4b4a-a758-df70d18953f5)
 
 
 
