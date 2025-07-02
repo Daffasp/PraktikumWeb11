@@ -12,25 +12,23 @@
 
 ---
 
-## 📁 Pembuatan Tabel Kategori
+## 📁 Pembuatan dan Relasi Tabel Kategori
 
-Untuk mengelompokkan artikel berdasarkan kategori, kita akan membuat tabel baru bernama `kategori`.
+### 1. 🧱 Membuat Tabel `kategori`
 
-### 🧱 Struktur Tabel `kategori`
+Tabel `kategori` digunakan untuk mengelompokkan artikel berdasarkan kategori tertentu.
 
-Berikut adalah struktur tabel `kategori`:
+#### Struktur Tabel
 
-| Kolom     | Tipe Data        | Keterangan                       |
-|-----------|------------------|----------------------------------|
-| id        | INT (auto increment) | Primary Key                    |
-| nama      | VARCHAR(100)     | Nama kategori                    |
-| slug      | VARCHAR(100)     | Slug URL kategori (unik)        |
-| created_at| DATETIME         | Waktu dibuat                     |
-| updated_at| DATETIME         | Waktu diperbarui                 |
+| Kolom      | Tipe Data         | Keterangan                                |
+|------------|-------------------|-------------------------------------------|
+| id         | INT (auto increment) | Primary Key                            |
+| nama       | VARCHAR(100)      | Nama kategori                             |
+| slug       | VARCHAR(100)      | Slug URL kategori, harus unik             |
+| created_at | DATETIME          | Waktu dibuat otomatis                     |
+| updated_at | DATETIME          | Waktu diperbarui otomatis jika ada update |
 
----
-
-### 💻 Query SQL untuk Membuat Tabel
+#### 💻 Query SQL
 
 ```sql
 CREATE TABLE kategori (
@@ -40,3 +38,15 @@ CREATE TABLE kategori (
     created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
     updated_at DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 );
+```
+## 🛠️ Membuat Model: `KategoriModel`
+
+Setelah membuat tabel `kategori` pada database, langkah selanjutnya adalah membuat model untuk mengelola data kategori melalui CodeIgniter 4.
+![image](https://github.com/user-attachments/assets/036b9a6e-8008-40f0-b07c-f4993118d2e6)
+
+## 🔄 Memodifikasi Model: `ArticleModel`
+
+Setelah membuat `KategoriModel`, langkah selanjutnya adalah memodifikasi model `ArticleModel` agar mendukung relasi dengan tabel `kategori`.
+![image](https://github.com/user-attachments/assets/63948ec8-4efa-4012-89d1-3a18bc53981c)
+
+
