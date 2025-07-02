@@ -102,3 +102,20 @@ Fitur ini menguji apakah admin dapat **menghapus artikel** yang sudah ada, dan m
 ![image](https://github.com/user-attachments/assets/2ce937dd-3260-47db-b737-92ca7cb4fbc8)
 ## Sesudah
 ![image](https://github.com/user-attachments/assets/02e9b806-8a64-46b3-b6dc-aa7235386b8a)
+
+## ⚙️ Membuat AJAX Controller
+
+AJAX Controller digunakan untuk menangani permintaan data secara dinamis dari **frontend** (seperti Vue.js atau jQuery), **tanpa perlu me-refresh halaman**. Umumnya digunakan untuk proses **CRUD** melalui RESTful API.
+![image](https://github.com/user-attachments/assets/fe9064bb-c3f8-4125-97ed-c9748ea6fcf6)
+
+## 🖼️ Membuat View
+
+Dalam arsitektur MVC CodeIgniter 4, **View** bertanggung jawab untuk menampilkan data yang dikirim oleh Controller ke pengguna. View dapat berupa HTML, dengan sedikit PHP untuk menampilkan variabel atau melakukan loop.
+![image](https://github.com/user-attachments/assets/48412ce1-fa43-44c1-afa3-2d6f3d577cb1)
+![image](https://github.com/user-attachments/assets/5d15782b-73ab-4385-b64b-9c535a8e5c09)
+## 🔧 Persiapan
+
+- Pastikan MySQL Server sudah berjalan.  
+- Buka database `sukses`.  
+- Pastikan tabel `artikel` dan `kategori` sudah ada dan terisi data.  
+- Pastikan library jQuery sudah terpasang atau dapat diakses melalui CDN.
