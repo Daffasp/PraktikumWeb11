@@ -319,3 +319,41 @@ http://localhost:8080/post/2
 
 Selanjutnya, klik Send. Request tersebut akan menampilkan data artikel yang memiliki ID nomor 2 di database.
 ![image](https://github.com/user-attachments/assets/7b399a7b-4a93-4198-9cae-fe11fda65615)
+
+# 🧪 PRAKTIKUM 11 – Pengenalan Vue.js dan Axios (Manual dengan CDN)
+
+## 📌 Persiapan
+
+Untuk memulai penggunaan framework **Vue.js**, terdapat dua cara yang umum dilakukan:
+- Menggunakan **npm** (Node Package Manager)
+- Menggunakan cara **manual** dengan CDN
+
+🛠️ **Untuk praktikum kali ini, kita akan menggunakan cara manual.**  
+Cara ini cukup praktis dan cocok untuk pemula yang belum menggunakan build tool seperti Webpack atau Vite.
+
+📦 Yang diperlukan:
+- **Vue.js** → Untuk membuat komponen dan reactive UI.
+- **Axios** → Untuk melakukan komunikasi dengan REST API.
+
+🔗 Keduanya akan digunakan melalui **CDN** langsung di dalam file HTML.
+# Library VueJS
+![image](https://github.com/user-attachments/assets/aa98036a-b181-40ac-818a-83ebc76a5135)
+# Library Axios
+![image](https://github.com/user-attachments/assets/c151b3ad-af92-4ddf-a874-c4df99e5514e)
+
+## Menampilkan Data
+
+File: `index.html`
+![image](https://github.com/user-attachments/assets/5c885ab8-7f3a-4735-aa05-259b16dfbe93)
+![image](https://github.com/user-attachments/assets/1861ded4-3c53-4151-8b61-e6622e413f59)
+![image](https://github.com/user-attachments/assets/a5726b91-3a60-47ee-bcc2-4d183153ddcb)
+
+## File `apps.js`
+![image](https://github.com/user-attachments/assets/68a7d8e4-0630-4fe8-b32b-16dc7f4bd96d)
+
+## File `style.css`
+![image](https://github.com/user-attachments/assets/6bebdd94-2216-4571-bb9a-984c01b7d93e)
+![image](https://github.com/user-attachments/assets/5e2b5100-84fe-455d-9c76-647a11751742)
+
+## Hasil Outputnya
+![image](https://github.com/user-attachments/assets/1b307b9c-27e5-463d-b4be-0ae3b2c6dea8)
