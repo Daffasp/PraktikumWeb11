@@ -49,4 +49,16 @@ Setelah membuat tabel `kategori` pada database, langkah selanjutnya adalah membu
 Setelah membuat `KategoriModel`, langkah selanjutnya adalah memodifikasi model `ArticleModel` agar mendukung relasi dengan tabel `kategori`.
 ![image](https://github.com/user-attachments/assets/63948ec8-4efa-4012-89d1-3a18bc53981c)
 
+## ⚙️ Memodifikasi Controller: `Artikel`
+
+Untuk menampilkan data artikel bersamaan dengan data kategorinya, kita perlu memodifikasi controller `Artikel.php` agar menggunakan method relasi dari `ArticleModel`.
+![image](https://github.com/user-attachments/assets/849528c0-c673-48d1-9804-223251e92610)
+![image](https://github.com/user-attachments/assets/bfee20d9-2ef8-4eb5-8733-36aa54916e16)
+![image](https://github.com/user-attachments/assets/ed53f2a7-4264-4516-bcc2-d81b00c40c9d)
+![image](https://github.com/user-attachments/assets/8d8efeda-34c2-4e87-93d5-f7178cbee70f)
+
+
+
+
+
 
