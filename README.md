@@ -236,3 +236,86 @@ $(document).ready(function() {
 });
 </script>
 ```
+# Pertanyaan dan Tugas
+
+Selesaikan semua langkah praktikum di atas.  
+Modifikasi tampilan data artikel dan pagination sesuai kebutuhan desain.
+![image](https://github.com/user-attachments/assets/36504d12-aaac-4cc4-9c49-f963fd8babdc)
+
+# Implementasikan fitur sorting (mengurutkan artikel berdasarkan judul, dll.) dengan AJAX.  
+Berdasarkan ID:
+![image](https://github.com/user-attachments/assets/45f1a116-ae72-452c-a662-995255884053)
+
+# Berdasarkan Judul:
+![image](https://github.com/user-attachments/assets/d587a15f-6380-405f-8e96-3de430ee4369)
+
+# Berdasaekan Kategori
+![image](https://github.com/user-attachments/assets/ed8287ef-bb6f-4178-b994-e7ad77f28a43)
+
+# Praktikum: REST API dengan CodeIgniter 4
+
+## 🛠️ Persiapan
+
+Periapan awal adalah mengunduh aplikasi **REST Client**.  
+Ada banyak aplikasi yang dapat digunakan untuk keperluan tersebut, salah satunya adalah **Postman**.
+
+🔹 **Postman** merupakan aplikasi yang berfungsi sebagai REST Client dan digunakan untuk melakukan testing REST API.  
+🔗 Unduh aplikasi Postman melalui tautan berikut:  
+[https://www.postman.com/downloads/](https://www.postman.com/downloads/)
+
+---
+
+## 🧩 Membuat Model
+
+Pada modul sebelumnya sudah dibuat `ArtikelModel`.  
+Pada modul ini, kita akan **memanfaatkan model tersebut** agar dapat diakses melalui API.
+
+---
+
+## 📁 Membuat REST Controller
+
+Pada tahap ini, kita akan membuat file **REST Controller** yang berisi fungsi-fungsi untuk:
+- Menampilkan data
+- Menambah data
+- Mengubah data
+- Menghapus data
+
+📌 Masuk ke direktori `app\Controllers` dan buat file baru bernama:
+![image](https://github.com/user-attachments/assets/5c84e01d-6056-4dd9-a7b8-6373a70c4f25)
+![image](https://github.com/user-attachments/assets/cd32cbd6-f705-4686-aa78-d409ee1b4dcc)
+## ⚙️ Penjelasan Method dalam REST Controller
+
+Kode di atas berisi **5 method**, yaitu:
+
+- **`index()`**  
+  Berfungsi untuk menampilkan seluruh data dari database.
+
+- **`create()`**  
+  Berfungsi untuk menambahkan data baru ke dalam database.
+
+- **`show($id)`**  
+  Berfungsi untuk menampilkan satu data spesifik berdasarkan ID.
+
+- **`update($id)`**  
+  Berfungsi untuk mengubah data yang sudah ada berdasarkan ID.
+
+- **`delete($id)`**  
+  Berfungsi untuk menghapus data dari database berdasarkan ID.
+
+## 🛣️ Membuat Routing REST API
+
+Untuk mengakses REST API di CodeIgniter 4, kita perlu **mendefinisikan route** terlebih dahulu.
+![image](https://github.com/user-attachments/assets/0c623406-a66e-4a2a-8ca8-45377e9ce42d)
+
+## Testing REST API CodeIgniter
+
+Buka aplikasi postman dan pilih create new → HTTP Request
+![image](https://github.com/user-attachments/assets/c5ca3df7-c5ea-48fe-935a-e14db24c3b2a)
+
+## Menampilkan Data Spesifik
+
+Masih menggunakan method GET, hanya perlu menambahkan ID artikel di belakang URL seperti ini:  
+http://localhost:8080/post/2
+
+Selanjutnya, klik Send. Request tersebut akan menampilkan data artikel yang memiliki ID nomor 2 di database.
+![image](https://github.com/user-attachments/assets/7b399a7b-4a93-4198-9cae-fe11fda65615)
