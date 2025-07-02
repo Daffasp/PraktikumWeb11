@@ -119,3 +119,120 @@ Dalam arsitektur MVC CodeIgniter 4, **View** bertanggung jawab untuk menampilkan
 - Buka database `sukses`.  
 - Pastikan tabel `artikel` dan `kategori` sudah ada dan terisi data.  
 - Pastikan library jQuery sudah terpasang atau dapat diakses melalui CDN.
+
+## 🛠️ Modifikasi Controller Artikel
+
+Ubah method `admin_index()` di `Artikel.php` untuk mengembalikan data dalam format JSON jika request adalah AJAX. (Sama seperti modul sebelumnya)
+
+Contoh kode:
+
+```php
+public function admin_index()
+{
+    $model = new \App\Models\ArticleModel();
+    $data['artikel'] = $model->getArtikelWithKategori()->findAll();
+
+    if ($this->request->isAJAX()) {
+        return $this->response->setJSON($data['artikel']);
+    }
+
+    return view('artikel/admin_index', $data);
+}
+```
+## 🛠️ Modifikasi Controller Artikel
+
+Penjelasan:
+• `$page = $this->request->getVar('page') ?? 1;`: Mendapatkan nomor halaman dari request. Jika tidak ada, default ke halaman 1.  
+• `$builder->paginate(10, 'default', $page);`: Menerapkan pagination dengan nomor halaman yang diberikan.  
+• `$this->request->isAJAX()`: Memeriksa apakah request yang datang adalah AJAX.  
+• Jika AJAX, kembalikan data artikel dan pager dalam format JSON.  
+• Jika bukan AJAX, tampilkan view seperti biasa.
+
+---
+
+## 🧾 Modifikasi View (admin_index.php)
+
+• Ubah view `admin_index.php` untuk menggunakan jQuery.  
+• Hapus kode yang menampilkan tabel artikel dan pagination secara langsung.  
+• Tambahkan elemen untuk menampilkan data artikel dan pagination dari AJAX.  
+• Tambahkan kode jQuery untuk melakukan request AJAX.
+```php
+<?= $this->include('template/admin_header'); ?>
+
+<div class="row mb-3">
+  <div class="col-md-6">
+    <form id="search-form" class="form-inline">
+      <input type="text" name="q" id="search-box" value="<?= $q ?? '' ?>" 
+        placeholder="Cari judul artikel" class="form-control mr-2"/>
+      <select name="kategori_id" id="category-filter" class="form-control mr-2">
+        <option value="">Semua kategori</option>
+        <?php foreach ($kategori as $k): ?>
+        <option value="<?= $k['id_kategori']; ?>" 
+          <?= ($kategori_id == $k['id_kategori']) ? 'selected' : ''; ?>>
+          <?= $k['nama_kategori']; ?>
+        </option>
+        <?php endforeach; ?>
+      </select>
+      <input type="submit" value="Cari" class="btn btn-primary"/>
+    </form>
+  </div>
+</div>
+
+<div id="article-container"></div>
+<div id="pagination-container"></div>
+
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script>
+$(document).ready(function() {
+  const articleContainer = $('#article-container');
+  const paginationContainer = $('#pagination-container');
+  const searchForm = $('#search-form');
+  const searchBox = $('#search-box');
+
+  const categoryFilter = $('#category-filter');
+
+  const fetchData = (url = '') => {
+    $.ajax({
+      url: url || '<?= base_url("admin/artikel/search") ?>',
+      type: 'GET',
+      data: {
+        q: searchBox.val(),
+        kategori_id: categoryFilter.val(),
+      },
+      dataType: 'json',
+      beforeSend: function() {
+        articleContainer.html('<p>Loading...</p>');
+      },
+      success: function(data) {
+        renderArticles(data.data, data.pagination, data.kategori_id);
+      }
+    });
+  };
+
+  const renderArticles = (articles, pagination, kategori_id) => {
+    let html = '';
+    articles.forEach(article => {
+      html += `<div class="card mb-3">
+        <div class="card-body">
+          <h5>${article.judul}</h5>
+          <p>${article.isi.substring(0, 150)}...</p>
+        </div>
+      </div>`;
+    });
+    articleContainer.html(html);
+    paginationContainer.html(pagination);
+  };
+
+  fetchData();
+
+  searchForm.on('submit', function(e) {
+    e.preventDefault();
+    fetchData();
+  });
+
+  categoryFilter.on('change', function() {
+    fetchData();
+  });
+});
+</script>
+```
