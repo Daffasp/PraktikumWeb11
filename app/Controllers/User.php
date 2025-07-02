@@ -23,7 +23,7 @@ class User extends BaseController
         $password = $this->request->getPost('password');
 
         // Jika tidak ada input email, tampilkan form login
-        if (!$email) {
+        if (!$email || !$password) {
             return view('user/login');
         }
 
@@ -35,22 +35,21 @@ class User extends BaseController
             $pass = $login['userpassword'];
 
             if (password_verify($password, $pass)) {
-                // Set session data
-                $login_data = [
+                // Simpan data login ke session
+                $session->set([
                     'user_id'    => $login['id'],
                     'user_name'  => $login['username'],
                     'user_email' => $login['useremail'],
-                    'logged_in'  => TRUE,
-                ];
+                    'logged_in'  => true,
+                ]);
 
-                $session->set($login_data);
-                return redirect()->to('admin/article');
+                return redirect()->to('/admin/artikel');
             } else {
-                $session->setFlashdata("flash_msg", "Password salah.");
+                $session->setFlashdata('flash_msg', 'Password salah.');
                 return redirect()->to('/user/login');
             }
         } else {
-            $session->setFlashdata("flash_msg", "Email tidak terdaftar.");
+            $session->setFlashdata('flash_msg', 'Email tidak terdaftar.');
             return redirect()->to('/user/login');
         }
     }

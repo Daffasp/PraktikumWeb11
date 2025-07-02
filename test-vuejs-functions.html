@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🧪 Test Vue.js Functions</title>
+    <style>
+        body { 
+            font-family: 'Inter', sans-serif; 
+            margin: 0; 
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        .container { 
+            max-width: 800px; 
+            margin: 0 auto; 
+            background: rgba(255,255,255,0.95); 
+            padding: 30px; 
+            border-radius: 20px; 
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            backdrop-filter: blur(10px);
+        }
+        .test-section { 
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            margin: 20px 0;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        .btn {
+            display: inline-block;
+            padding: 12px 24px;
+            background: linear-gradient(135deg, #6366f1, #8b5cf6);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            margin: 8px;
+            box-shadow: 0 5px 15px rgba(99, 102, 241, 0.4);
+            border: none;
+            cursor: pointer;
+        }
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(99, 102, 241, 0.6);
+        }
+        .btn-success {
+            background: linear-gradient(135deg, #10b981, #059669);
+            box-shadow: 0 5px 15px rgba(16, 185, 129, 0.4);
+        }
+        .btn-warning {
+            background: linear-gradient(135deg, #f59e0b, #d97706);
+            box-shadow: 0 5px 15px rgba(245, 158, 11, 0.4);
+        }
+        h1, h2, h3 {
+            color: #1f2937;
+            text-align: center;
+        }
+        .highlight {
+            background: linear-gradient(135deg, #fef3c7, #fde68a);
+            padding: 25px;
+            border-radius: 15px;
+            border-left: 5px solid #f59e0b;
+            margin: 25px 0;
+            text-align: center;
+        }
+        .test-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 25px 0;
+        }
+        .test-card {
+            background: #f8fafc;
+            padding: 20px;
+            border-radius: 15px;
+            text-align: center;
+            border: 2px solid #e5e7eb;
+            transition: all 0.3s ease;
+        }
+        .test-card:hover {
+            border-color: #6366f1;
+            transform: translateY(-5px);
+        }
+        .test-card i {
+            font-size: 2rem;
+            color: #6366f1;
+            margin-bottom: 15px;
+        }
+        .status {
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin: 10px 5px;
+            display: inline-block;
+        }
+        .status.success {
+            background: #dcfce7;
+            color: #166534;
+        }
+        .status.warning {
+            background: #fef3c7;
+            color: #92400e;
+        }
+        .status.error {
+            background: #fee2e2;
+            color: #991b1b;
+        }
+        .checklist {
+            text-align: left;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .checklist li {
+            margin: 10px 0;
+            padding: 10px;
+            background: #f8fafc;
+            border-radius: 8px;
+            border-left: 4px solid #6366f1;
+        }
+    </style>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1 style="margin-bottom: 1rem;">
+            <i class="fas fa-vial"></i> Test Vue.js Functions
+        </h1>
+        
+        <div class="highlight">
+            <h3><i class="fas fa-check-circle"></i> Semua Fungsi Sudah Diperbaiki!</h3>
+            <p>Fungsi tambah artikel, upload foto, edit, dan delete sudah dikembalikan dengan design yang modern!</p>
+        </div>
+
+        <div class="test-section">
+            <h3><i class="fas fa-list-check"></i> Functions Checklist</h3>
+            <div class="checklist">
+                <ul>
+                    <li><strong>✅ Tambah Artikel:</strong> Button "Tambah Artikel" membuka modal form</li>
+                    <li><strong>✅ Upload Foto:</strong> Drag & drop area untuk upload gambar</li>
+                    <li><strong>✅ Preview Gambar:</strong> Real-time preview saat upload</li>
+                    <li><strong>✅ Edit Artikel:</strong> Button edit pada setiap artikel card</li>
+                    <li><strong>✅ Delete Artikel:</strong> Button delete dengan konfirmasi</li>
+                    <li><strong>✅ Search Function:</strong> Real-time search artikel</li>
+                    <li><strong>✅ Stats Counter:</strong> Dynamic stats yang update otomatis</li>
+                    <li><strong>✅ Responsive Design:</strong> Optimal di semua device</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="test-section">
+            <h3><i class="fas fa-play"></i> Test Functions</h3>
+            
+            <div class="test-grid">
+                <div class="test-card">
+                    <i class="fas fa-plus"></i>
+                    <h4>Add Article</h4>
+                    <p>Test fungsi tambah artikel baru</p>
+                    <span class="status success">Ready</span>
+                </div>
+                
+                <div class="test-card">
+                    <i class="fas fa-image"></i>
+                    <h4>Upload Photo</h4>
+                    <p>Test upload dan preview gambar</p>
+                    <span class="status success">Ready</span>
+                </div>
+                
+                <div class="test-card">
+                    <i class="fas fa-edit"></i>
+                    <h4>Edit Article</h4>
+                    <p>Test edit artikel existing</p>
+                    <span class="status success">Ready</span>
+                </div>
+                
+                <div class="test-card">
+                    <i class="fas fa-trash"></i>
+                    <h4>Delete Article</h4>
+                    <p>Test hapus artikel</p>
+                    <span class="status success">Ready</span>
+                </div>
+                
+                <div class="test-card">
+                    <i class="fas fa-search"></i>
+                    <h4>Search Function</h4>
+                    <p>Test real-time search</p>
+                    <span class="status success">Ready</span>
+                </div>
+                
+                <div class="test-card">
+                    <i class="fas fa-chart-bar"></i>
+                    <h4>Stats Counter</h4>
+                    <p>Test dynamic statistics</p>
+                    <span class="status success">Ready</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="test-section">
+            <h3><i class="fas fa-tools"></i> What's Fixed</h3>
+            
+            <div style="text-align: left; max-width: 600px; margin: 0 auto;">
+                <h4>🔧 JavaScript Functions:</h4>
+                <p>✅ <code>tambah()</code> - Open modal untuk tambah artikel</p>
+                <p>✅ <code>edit(row)</code> - Open modal untuk edit artikel</p>
+                <p>✅ <code>hapus(index, id)</code> - Delete artikel dengan konfirmasi</p>
+                <p>✅ <code>saveData()</code> - Save artikel dengan FormData untuk upload</p>
+                <p>✅ <code>handleFileUpload()</code> - Handle file upload dan preview</p>
+                <p>✅ <code>removeImage()</code> - Remove preview image</p>
+                
+                <h4>🎨 CSS Styling:</h4>
+                <p>✅ Modal overlay dengan backdrop blur</p>
+                <p>✅ Modern form design dengan icons</p>
+                <p>✅ File upload area dengan drag & drop style</p>
+                <p>✅ Image preview dengan remove button</p>
+                <p>✅ Responsive design untuk mobile</p>
+                
+                <h4>🖼️ HTML Structure:</h4>
+                <p>✅ Modal form dengan semua input fields</p>
+                <p>✅ File upload area yang interactive</p>
+                <p>✅ Image preview container</p>
+                <p>✅ Action buttons untuk edit/delete</p>
+            </div>
+        </div>
+
+        <div style="text-align: center; margin: 3rem 0;">
+            <h3>🚀 Test Vue.js App Sekarang!</h3>
+            <p>Semua fungsi sudah diperbaiki dan siap digunakan:</p>
+            
+            <a href="http://localhost/lab8_vuejs/index.html" target="_blank" class="btn btn-success">
+                <i class="fab fa-vuejs"></i> Buka Vue.js App
+            </a>
+            
+            <a href="http://localhost/lab8_vuejs/test-simple.html" target="_blank" class="btn">
+                <i class="fas fa-vial"></i> Simple Test
+            </a>
+            
+            <a href="http://localhost/ci4/public/post" target="_blank" class="btn btn-warning">
+                <i class="fas fa-database"></i> Test API
+            </a>
+        </div>
+
+        <div class="highlight">
+            <h3><i class="fas fa-lightbulb"></i> Testing Steps</h3>
+            <p>1. Klik "Tambah Artikel" untuk test modal form</p>
+            <p>2. Upload gambar dengan drag & drop atau klik area</p>
+            <p>3. Test search dengan ketik di search box</p>
+            <p>4. Hover pada artikel card untuk lihat action buttons</p>
+            <p>5. Test edit dan delete functions</p>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🔧 Debug Vue.js App</title>
+    <style>
+        body { 
+            font-family: 'Inter', sans-serif; 
+            margin: 0; 
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        .container { 
+            max-width: 800px; 
+            margin: 0 auto; 
+            background: rgba(255,255,255,0.95); 
+            padding: 30px; 
+            border-radius: 20px; 
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            backdrop-filter: blur(10px);
+        }
+        .test-section { 
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            margin: 20px 0;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        .btn {
+            display: inline-block;
+            padding: 12px 24px;
+            background: linear-gradient(135deg, #6366f1, #8b5cf6);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            margin: 8px;
+            box-shadow: 0 5px 15px rgba(99, 102, 241, 0.4);
+            border: none;
+            cursor: pointer;
+        }
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(99, 102, 241, 0.6);
+        }
+        .btn-success {
+            background: linear-gradient(135deg, #10b981, #059669);
+            box-shadow: 0 5px 15px rgba(16, 185, 129, 0.4);
+        }
+        .btn-warning {
+            background: linear-gradient(135deg, #f59e0b, #d97706);
+            box-shadow: 0 5px 15px rgba(245, 158, 11, 0.4);
+        }
+        .btn-danger {
+            background: linear-gradient(135deg, #ef4444, #dc2626);
+            box-shadow: 0 5px 15px rgba(239, 68, 68, 0.4);
+        }
+        h1, h2, h3 {
+            color: #1f2937;
+            text-align: center;
+        }
+        .highlight {
+            background: linear-gradient(135deg, #fef3c7, #fde68a);
+            padding: 25px;
+            border-radius: 15px;
+            border-left: 5px solid #f59e0b;
+            margin: 25px 0;
+            text-align: center;
+        }
+        .status {
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin: 10px 5px;
+            display: inline-block;
+        }
+        .status.success {
+            background: #dcfce7;
+            color: #166534;
+        }
+        .status.warning {
+            background: #fef3c7;
+            color: #92400e;
+        }
+        .status.error {
+            background: #fee2e2;
+            color: #991b1b;
+        }
+        .result-box {
+            background: #f8fafc;
+            border: 2px dashed #d1d5db;
+            border-radius: 15px;
+            padding: 20px;
+            margin: 20px 0;
+            text-align: center;
+        }
+        #test-results {
+            margin-top: 20px;
+        }
+        .code-block {
+            background: #1f2937;
+            color: #f8fafc;
+            padding: 15px;
+            border-radius: 10px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+            overflow-x: auto;
+            margin: 15px 0;
+        }
+    </style>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1 style="margin-bottom: 1rem;">
+            <i class="fas fa-bug"></i> Debug Vue.js App
+        </h1>
+        
+        <div class="highlight">
+            <h3><i class="fas fa-exclamation-triangle"></i> Troubleshooting Vue.js Issues</h3>
+            <p>Mari debug dan perbaiki masalah pada Vue.js app step by step!</p>
+        </div>
+
+        <div class="test-section">
+            <h3><i class="fas fa-list-check"></i> Diagnostic Steps</h3>
+            
+            <div style="text-align: center; margin: 20px 0;">
+                <button onclick="testSimpleVue()" class="btn btn-success">
+                    <i class="fas fa-play"></i> Test Simple Vue
+                </button>
+                <button onclick="testAPI()" class="btn btn-warning">
+                    <i class="fas fa-server"></i> Test API
+                </button>
+                <button onclick="checkConsole()" class="btn">
+                    <i class="fas fa-terminal"></i> Check Console
+                </button>
+                <button onclick="resetApp()" class="btn btn-danger">
+                    <i class="fas fa-redo"></i> Reset App
+                </button>
+            </div>
+            
+            <div id="test-results"></div>
+        </div>
+
+        <div class="test-section">
+            <h3><i class="fas fa-tools"></i> Quick Fixes</h3>
+            
+            <div class="result-box">
+                <h4>Possible Issues & Solutions:</h4>
+                <div style="text-align: left; max-width: 600px; margin: 0 auto;">
+                    <h5>1. CSS Variables Issue:</h5>
+                    <p>CSS variables (--primary-color) might not be supported in older browsers</p>
+                    <div class="code-block">
+                        /* Replace CSS variables with direct values */
+                        color: #6366f1; /* instead of var(--primary-color) */
+                    </div>
+                    
+                    <h5>2. JavaScript Computed Properties:</h5>
+                    <p>Computed properties might have null/undefined errors</p>
+                    <div class="code-block">
+                        // Add null checks
+                        if (!this.artikel) return 0;
+                    </div>
+                    
+                    <h5>3. API Connection:</h5>
+                    <p>CORS or server issues preventing API calls</p>
+                    <div class="code-block">
+                        // Check if CI4 server is running
+                        http://localhost/ci4/public/post
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div style="text-align: center; margin: 3rem 0;">
+            <h3>🔗 Test Links</h3>
+            <p>Try these different versions:</p>
+            
+            <a href="http://localhost/lab8_vuejs/test-simple.html" target="_blank" class="btn btn-success">
+                <i class="fas fa-vial"></i> Simple Test
+            </a>
+            
+            <a href="http://localhost/lab8_vuejs/index.html" target="_blank" class="btn">
+                <i class="fab fa-vuejs"></i> Main App
+            </a>
+            
+            <a href="http://localhost/ci4/public/post" target="_blank" class="btn btn-warning">
+                <i class="fas fa-database"></i> API Test
+            </a>
+        </div>
+
+        <div class="highlight">
+            <h3><i class="fas fa-lightbulb"></i> Debug Tips</h3>
+            <p>1. Open browser console (F12) to see errors</p>
+            <p>2. Check if Vue.js and Axios are loading</p>
+            <p>3. Verify API endpoint is accessible</p>
+            <p>4. Test with simple version first</p>
+        </div>
+    </div>
+
+    <script>
+        function testSimpleVue() {
+            const resultsDiv = document.getElementById('test-results');
+            resultsDiv.innerHTML = '<p><i class="fas fa-spinner fa-spin"></i> Testing simple Vue.js...</p>';
+            
+            // Test if Vue.js is available
+            if (typeof Vue !== 'undefined') {
+                resultsDiv.innerHTML = `
+                    <div class="status success">✅ Vue.js is available</div>
+                    <p>Opening simple test page...</p>
+                `;
+                window.open('http://localhost/lab8_vuejs/test-simple.html', '_blank');
+            } else {
+                resultsDiv.innerHTML = `
+                    <div class="status error">❌ Vue.js not loaded</div>
+                    <p>Vue.js library is not available. Check CDN connection.</p>
+                `;
+            }
+        }
+
+        function testAPI() {
+            const resultsDiv = document.getElementById('test-results');
+            resultsDiv.innerHTML = '<p><i class="fas fa-spinner fa-spin"></i> Testing API connection...</p>';
+            
+            fetch('http://localhost/ci4/public/post')
+                .then(response => response.json())
+                .then(data => {
+                    resultsDiv.innerHTML = `
+                        <div class="status success">✅ API is working</div>
+                        <p>Found ${data.artikel ? data.artikel.length : 0} articles</p>
+                        <div class="code-block">${JSON.stringify(data, null, 2).substring(0, 200)}...</div>
+                    `;
+                })
+                .catch(error => {
+                    resultsDiv.innerHTML = `
+                        <div class="status error">❌ API Error</div>
+                        <p>Error: ${error.message}</p>
+                        <p>Make sure CI4 server is running on localhost</p>
+                    `;
+                });
+        }
+
+        function checkConsole() {
+            const resultsDiv = document.getElementById('test-results');
+            resultsDiv.innerHTML = `
+                <div class="status warning">⚠️ Check Browser Console</div>
+                <p>Press F12 to open Developer Tools and check the Console tab for errors.</p>
+                <p>Common errors to look for:</p>
+                <ul style="text-align: left; max-width: 500px; margin: 0 auto;">
+                    <li>Vue.js not loaded</li>
+                    <li>Axios not loaded</li>
+                    <li>CSS parsing errors</li>
+                    <li>JavaScript syntax errors</li>
+                    <li>CORS errors</li>
+                </ul>
+            `;
+        }
+
+        function resetApp() {
+            const resultsDiv = document.getElementById('test-results');
+            resultsDiv.innerHTML = `
+                <div class="status warning">🔄 Resetting App</div>
+                <p>Try these steps:</p>
+                <ol style="text-align: left; max-width: 500px; margin: 0 auto;">
+                    <li>Clear browser cache (Ctrl+F5)</li>
+                    <li>Check if CI4 server is running</li>
+                    <li>Test simple version first</li>
+                    <li>Check browser console for errors</li>
+                    <li>Verify all CDN links are working</li>
+                </ol>
+            `;
+        }
+    </script>
+</body>
+</html>

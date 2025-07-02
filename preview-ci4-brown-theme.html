@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎨 CI4 Brown Theme Preview</title>
+    <style>
+        body { 
+            font-family: 'Arial', sans-serif; 
+            margin: 0; 
+            background: linear-gradient(135deg, #8B4513 0%, #D2691E 50%, #CD853F 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        .container { 
+            max-width: 1000px; 
+            margin: 0 auto; 
+            background: white; 
+            padding: 30px; 
+            border-radius: 15px; 
+            box-shadow: 0 10px 30px rgba(139, 69, 19, 0.2);
+        }
+        .preview-section { 
+            background: #FFF8DC;
+            border-radius: 12px;
+            padding: 25px;
+            margin: 20px 0;
+            box-shadow: 0 4px 12px rgba(139, 69, 19, 0.1);
+            border: 1px solid #DEB887;
+        }
+        .comparison {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin: 25px 0;
+        }
+        .before, .after {
+            padding: 20px;
+            border-radius: 15px;
+            text-align: center;
+        }
+        .before {
+            background: #E6E6FA;
+            border: 2px solid #9370DB;
+        }
+        .after {
+            background: #F5E6D3;
+            border: 2px solid #8B4513;
+        }
+        .btn {
+            background: #8B4513;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            margin: 10px;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            text-decoration: none;
+        }
+        .btn:hover {
+            background: #A0522D;
+            transform: translateY(-2px);
+        }
+        .btn-success {
+            background: #10b981;
+        }
+        .btn-warning {
+            background: #D2691E;
+        }
+        h1, h2, h3 {
+            color: #8B4513;
+            text-align: center;
+        }
+        .highlight {
+            background: linear-gradient(135deg, #F4E4BC, #F5E6D3);
+            padding: 25px;
+            border-radius: 15px;
+            border-left: 5px solid #8B4513;
+            margin: 25px 0;
+            text-align: center;
+        }
+        .features-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+        .feature-item {
+            background: #FFF8DC;
+            padding: 15px;
+            border-radius: 10px;
+            border-left: 4px solid #8B4513;
+        }
+        .feature-item h4 {
+            margin: 0 0 10px 0;
+            color: #8B4513;
+        }
+        .feature-item p {
+            margin: 0;
+            color: #A0522D;
+            font-size: 0.9rem;
+        }
+        .mockup {
+            background: #FFF8DC;
+            border: 2px dashed #DEB887;
+            border-radius: 15px;
+            padding: 30px;
+            margin: 25px 0;
+            text-align: center;
+        }
+        @media (max-width: 768px) {
+            .comparison {
+                grid-template-columns: 1fr;
+            }
+            .container {
+                margin: 10px;
+                padding: 20px;
+            }
+        }
+    </style>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1 style="margin-bottom: 1rem;">
+            <i class="fas fa-palette"></i> CI4 Brown Theme Applied!
+        </h1>
+        
+        <div class="highlight">
+            <h3><i class="fas fa-check-circle"></i> CI4 Dashboard Sudah Diubah ke Tema Coklat!</h3>
+            <p>Semua halaman CI4 sekarang menggunakan warna coklat yang seragam dengan Vue.js app!</p>
+        </div>
+
+        <div class="comparison">
+            <div class="before">
+                <h3><i class="fas fa-times-circle"></i> Sebelum</h3>
+                <ul style="text-align: left;">
+                    <li>Background gradient ungu-biru</li>
+                    <li>Primary color biru (#6366f1)</li>
+                    <li>Secondary color ungu (#8b5cf6)</li>
+                    <li>Card background putih polos</li>
+                    <li>Button dan link biru</li>
+                </ul>
+            </div>
+            <div class="after">
+                <h3><i class="fas fa-check-circle"></i> Sesudah</h3>
+                <ul style="text-align: left;">
+                    <li>Background gradient coklat hangat</li>
+                    <li>Primary color coklat (#8B4513)</li>
+                    <li>Secondary color sienna (#A0522D)</li>
+                    <li>Card background cream (#FFF8DC)</li>
+                    <li>Button dan link coklat</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="preview-section">
+            <h3><i class="fas fa-list-check"></i> Files yang Diubah</h3>
+            
+            <div class="features-list">
+                <div class="feature-item">
+                    <h4><i class="fas fa-file-code"></i> header.php</h4>
+                    <p>Template header dengan CSS variables coklat</p>
+                </div>
+                <div class="feature-item">
+                    <h4><i class="fas fa-home"></i> home.php</h4>
+                    <p>Landing page dengan gradient dan button coklat</p>
+                </div>
+                <div class="feature-item">
+                    <h4><i class="fas fa-newspaper"></i> artikel/index.php</h4>
+                    <p>Halaman artikel dengan card coklat</p>
+                </div>
+                <div class="feature-item">
+                    <h4><i class="fas fa-tachometer-alt"></i> admin_index.php</h4>
+                    <p>Dashboard admin dengan tema coklat</p>
+                </div>
+                <div class="feature-item">
+                    <h4><i class="fas fa-paint-brush"></i> style.css</h4>
+                    <p>CSS utama dengan variabel warna coklat</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="mockup">
+            <h3><i class="fas fa-swatchbook"></i> Color Scheme</h3>
+            <p><strong>Primary:</strong> Saddle Brown (#8B4513)</p>
+            <p><strong>Secondary:</strong> Sienna (#A0522D)</p>
+            <p><strong>Warning:</strong> Chocolate (#D2691E)</p>
+            <p><strong>Background:</strong> Cornsilk (#FFF8DC)</p>
+            <p><strong>Border:</strong> Burlywood (#DEB887)</p>
+            <p><strong>Light:</strong> Cream (#F5E6D3)</p>
+        </div>
+
+        <div style="text-align: center; margin: 3rem 0;">
+            <h3>🚀 Test CI4 dengan Tema Coklat!</h3>
+            <p>Klik tombol di bawah untuk melihat halaman CI4 yang sudah diubah:</p>
+            
+            <a href="http://localhost/ci4/public/" target="_blank" class="btn">
+                <i class="fas fa-home"></i> Home Page
+            </a>
+            
+            <a href="http://localhost/ci4/public/artikel" target="_blank" class="btn btn-success">
+                <i class="fas fa-newspaper"></i> Artikel Page
+            </a>
+            
+            <a href="http://localhost/ci4/public/admin/artikel" target="_blank" class="btn btn-warning">
+                <i class="fas fa-tachometer-alt"></i> Admin Dashboard
+            </a>
+        </div>
+
+        <div class="preview-section">
+            <h3><i class="fas fa-magic"></i> Perubahan Detail</h3>
+            
+            <div style="text-align: left; max-width: 600px; margin: 0 auto;">
+                <h4>🎨 CSS Variables Updated:</h4>
+                <p>✅ <code>--primary-color: #8B4513</code> (Saddle Brown)</p>
+                <p>✅ <code>--secondary-color: #A0522D</code> (Sienna)</p>
+                <p>✅ <code>--warning-color: #D2691E</code> (Chocolate)</p>
+                <p>✅ <code>--light-color: #FFF8DC</code> (Cornsilk)</p>
+                <p>✅ <code>--border-color: #DEB887</code> (Burlywood)</p>
+                
+                <h4>🌈 Background Gradients:</h4>
+                <p>✅ Body background: Coklat gradient 3-tone</p>
+                <p>✅ Features section: Cream gradient</p>
+                <p>✅ Button gradients: Coklat ke sienna</p>
+                
+                <h4>🎯 Interactive Elements:</h4>
+                <p>✅ Button hover: Sienna (#A0522D)</p>
+                <p>✅ Focus states: Coklat border</p>
+                <p>✅ Shadow colors: Coklat dengan opacity</p>
+            </div>
+        </div>
+
+        <div class="highlight">
+            <h3><i class="fas fa-heart"></i> Konsistensi Design</h3>
+            <p>🎯 Vue.js app dan CI4 dashboard sekarang menggunakan tema warna yang sama</p>
+            <p>✨ User experience yang konsisten di seluruh aplikasi</p>
+            <p>🌟 Branding yang unified dengan warna coklat yang elegan</p>
+            <p>💼 Professional look dengan warm color palette</p>
+        </div>
+    </div>
+</body>
+</html>

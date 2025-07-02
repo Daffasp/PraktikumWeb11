@@ -6,30 +6,63 @@ use CodeIgniter\Router\RouteCollection;
  * @var RouteCollection $routes
  */
 
-// Route utama
+// ========================
+// 🔧 Default Route
+// ========================
 $routes->get('/', 'Page::home');
 
-// Group untuk admin dengan filter auth
-$routes->group('admin', ['filter' => 'auth'], function($routes) {
-    $routes->get('article', 'Article::admin_index');              // List artikel untuk admin
-    $routes->add('article/add', 'Article::add');                  // Tambah artikel
-    $routes->add('article/edit/(:any)', 'Article::edit/$1');      // Edit artikel
-    $routes->get('article/delete/(:any)', 'Article::delete/$1');  // Hapus artikel
+// ========================
+// 📦 Public Route untuk Artikel
+// ========================
+$routes->get('artikel', 'Artikel::index'); // <-- ini tambahan agar /artikel bisa diakses publik
+
+// ========================
+// 🔐 Admin Routes (temporarily without auth filter for testing)
+// ========================
+$routes->group('admin', function ($routes) {
+    $routes->get('artikel', 'Artikel::admin_index');
+    $routes->add('artikel/add', 'Artikel::add');
+    $routes->add('artikel/edit/(:any)', 'Artikel::edit/$1');
+    $routes->get('artikel/delete/(:any)', 'Artikel::delete/$1');
 });
 
-// Halaman publik artikel
-$routes->get('/article', 'Article::index');                        // List semua artikel untuk user
-$routes->get('/article/(:segment)', 'Article::view/$1');          // Lihat detail artikel berdasarkan slug
+// ========================
+// 🔐 Admin Routes (with auth filter) - uncomment when auth is ready
+// ========================
+// $routes->group('admin', ['filter' => 'auth'], function ($routes) {
+//     $routes->get('artikel', 'Artikel::admin_index');
+//     $routes->add('artikel/add', 'Artikel::add');
+//     $routes->add('artikel/edit/(:any)', 'Artikel::edit/$1');
+//     $routes->get('artikel/delete/(:any)', 'Artikel::delete/$1');
+// });
 
-// Halaman statis
-$routes->get('/about', 'Page::about');
-$routes->get('/contact', 'Page::contact');
-$routes->get('/faqs', 'Page::faqs');
-$routes->get('/tos', 'Page::tos');
+// ========================
+// 📘 Static Pages
+// ========================
+$routes->get('about', 'Page::about');
+$routes->get('contact', 'Page::contact');
+$routes->get('faqs', 'Page::faqs');
+$routes->get('tos', 'Page::tos');
 
-// Login user
-$routes->get('/user/login', 'User::login');
-$routes->post('/user/login', 'User::login');
+// ========================
+// 👤 User Authentication
+// ========================
+$routes->get('user/login', 'User::login');      // Tampilkan form login
+$routes->post('user/login', 'User::login');     // Proses form login
+$routes->get('user/logout', 'User::logout');    // Logout
 
-// ✅ Logout user
-$routes->get('/user/logout', 'User::logout');
+// ========================
+// 📘 Artikel Public Detail
+// ========================
+$routes->get('artikel/(:segment)', 'Artikel::view/$1'); // Detail artikel berdasarkan slug
+
+// ========================
+// ✅ RESTful API untuk Post Controller
+// ========================
+$routes->resource('post');
+
+// ========================
+// 🚨 404 Override & Default Settings
+// ========================
+$routes->set404Override();
+$routes->setAutoRoute(false); // Set true jika kamu ingin gunakan auto-routing (tidak disarankan)

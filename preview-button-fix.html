@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🔧 Button Text Fix</title>
+    <style>
+        body { 
+            font-family: 'Arial', sans-serif; 
+            margin: 0; 
+            background: linear-gradient(135deg, #8B4513 0%, #D2691E 50%, #CD853F 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        .container { 
+            max-width: 800px; 
+            margin: 0 auto; 
+            background: white; 
+            padding: 30px; 
+            border-radius: 15px; 
+            box-shadow: 0 10px 30px rgba(139, 69, 19, 0.2);
+        }
+        .preview-section { 
+            background: #FFF8DC;
+            border-radius: 12px;
+            padding: 25px;
+            margin: 20px 0;
+            box-shadow: 0 4px 12px rgba(139, 69, 19, 0.1);
+            border: 1px solid #DEB887;
+        }
+        .comparison {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin: 25px 0;
+        }
+        .before, .after {
+            padding: 20px;
+            border-radius: 15px;
+            text-align: center;
+        }
+        .before {
+            background: #F4E4BC;
+            border: 2px solid #D2691E;
+        }
+        .after {
+            background: #D4F1D4;
+            border: 2px solid #10b981;
+        }
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 24px;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            margin: 10px;
+            border: 2px solid;
+        }
+        .btn-primary {
+            background: linear-gradient(135deg, #8B4513, #A0522D);
+            color: white;
+            border-color: #8B4513;
+        }
+        .btn-secondary-old {
+            background: rgba(139, 69, 19, 0.1);
+            color: #8B4513;
+            border-color: #8B4513;
+        }
+        .btn-secondary-new {
+            background: #8B4513;
+            color: white;
+            border-color: #8B4513;
+        }
+        .btn:hover {
+            transform: translateY(-2px);
+        }
+        .btn-secondary-new:hover {
+            background: #A0522D;
+        }
+        h1, h2, h3 {
+            color: #8B4513;
+            text-align: center;
+        }
+        .highlight {
+            background: linear-gradient(135deg, #F4E4BC, #F5E6D3);
+            padding: 25px;
+            border-radius: 15px;
+            border-left: 5px solid #8B4513;
+            margin: 25px 0;
+            text-align: center;
+        }
+        .demo-buttons {
+            text-align: center;
+            margin: 30px 0;
+        }
+        @media (max-width: 768px) {
+            .comparison {
+                grid-template-columns: 1fr;
+            }
+            .container {
+                margin: 10px;
+                padding: 20px;
+            }
+        }
+    </style>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1 style="margin-bottom: 1rem;">
+            <i class="fas fa-paint-brush"></i> Button Text Fixed!
+        </h1>
+        
+        <div class="highlight">
+            <h3><i class="fas fa-check-circle"></i> Tulisan "Dashboard Admin" Sudah Putih!</h3>
+            <p>Button "Dashboard Admin" di home page sekarang menggunakan text putih yang lebih mudah dibaca!</p>
+        </div>
+
+        <div class="comparison">
+            <div class="before">
+                <h3><i class="fas fa-times-circle"></i> Sebelum</h3>
+                <p>Text coklat pada background coklat transparan</p>
+                <a href="#" class="btn btn-secondary-old">
+                    <i class="fas fa-tachometer-alt"></i>
+                    Dashboard Admin
+                </a>
+                <p><small>Sulit dibaca karena kontras rendah</small></p>
+            </div>
+            <div class="after">
+                <h3><i class="fas fa-check-circle"></i> Sesudah</h3>
+                <p>Text putih pada background coklat solid</p>
+                <a href="#" class="btn btn-secondary-new">
+                    <i class="fas fa-tachometer-alt"></i>
+                    Dashboard Admin
+                </a>
+                <p><small>Mudah dibaca dengan kontras tinggi</small></p>
+            </div>
+        </div>
+
+        <div class="preview-section">
+            <h3><i class="fas fa-code"></i> Perubahan CSS</h3>
+            
+            <div style="text-align: left; max-width: 600px; margin: 0 auto;">
+                <h4>🔧 Sebelum:</h4>
+                <pre style="background: #f5f5f5; padding: 15px; border-radius: 8px; overflow-x: auto;">
+.btn-secondary {
+    background: rgba(139, 69, 19, 0.1);
+    color: var(--primary-color);  /* Coklat */
+    border: 2px solid var(--primary-color);
+}</pre>
+                
+                <h4>✅ Sesudah:</h4>
+                <pre style="background: #f5f5f5; padding: 15px; border-radius: 8px; overflow-x: auto;">
+.btn-secondary {
+    background: var(--primary-color);  /* Solid coklat */
+    color: white;                      /* Putih */
+    border: 2px solid var(--primary-color);
+}</pre>
+                
+                <h4>🎯 Hover State:</h4>
+                <pre style="background: #f5f5f5; padding: 15px; border-radius: 8px; overflow-x: auto;">
+.btn-secondary:hover {
+    background: var(--secondary-color);  /* Sienna */
+    color: white;
+    transform: translateY(-3px);
+}</pre>
+            </div>
+        </div>
+
+        <div class="demo-buttons">
+            <h3>🎨 Button Demo</h3>
+            <p>Kedua button sekarang memiliki readability yang baik:</p>
+            
+            <a href="#" class="btn btn-primary">
+                <i class="fas fa-newspaper"></i>
+                Lihat Artikel
+            </a>
+            
+            <a href="#" class="btn btn-secondary-new">
+                <i class="fas fa-tachometer-alt"></i>
+                Dashboard Admin
+            </a>
+        </div>
+
+        <div style="text-align: center; margin: 3rem 0;">
+            <h3>🚀 Test Home Page Sekarang!</h3>
+            <p>Klik tombol di bawah untuk melihat perubahan di home page:</p>
+            
+            <a href="http://localhost/ci4/public/" target="_blank" class="btn btn-secondary-new">
+                <i class="fas fa-home"></i> Buka Home Page
+            </a>
+        </div>
+
+        <div class="preview-section">
+            <h3><i class="fas fa-lightbulb"></i> Improvement Details</h3>
+            
+            <div style="text-align: left; max-width: 600px; margin: 0 auto;">
+                <h4>📈 Accessibility Improvements:</h4>
+                <p>✅ <strong>Better Contrast:</strong> White text on brown background</p>
+                <p>✅ <strong>Consistent Design:</strong> Both buttons now have solid backgrounds</p>
+                <p>✅ <strong>Better Readability:</strong> Easier to read for all users</p>
+                <p>✅ <strong>Professional Look:</strong> More polished appearance</p>
+                
+                <h4>🎨 Visual Consistency:</h4>
+                <p>✅ Primary button: Brown gradient with white text</p>
+                <p>✅ Secondary button: Solid brown with white text</p>
+                <p>✅ Hover states: Darker brown (Sienna) for both</p>
+                <p>✅ Same border radius and padding for consistency</p>
+            </div>
+        </div>
+
+        <div class="highlight">
+            <h3><i class="fas fa-heart"></i> Perfect!</h3>
+            <p>🎯 Button "Dashboard Admin" sekarang mudah dibaca dengan text putih</p>
+            <p>✨ Konsistensi visual yang lebih baik di home page</p>
+            <p>🌟 Professional appearance dengan kontras yang optimal</p>
+        </div>
+    </div>
+</body>
+</html>

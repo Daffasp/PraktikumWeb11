@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎨 Preview Brown Theme</title>
+    <style>
+        body { 
+            font-family: 'Arial', sans-serif; 
+            margin: 0; 
+            background: linear-gradient(135deg, #8B4513 0%, #D2691E 50%, #CD853F 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        .container { 
+            max-width: 1000px; 
+            margin: 0 auto; 
+            background: white; 
+            padding: 30px; 
+            border-radius: 15px; 
+            box-shadow: 0 10px 30px rgba(139, 69, 19, 0.2);
+        }
+        .preview-section { 
+            background: #FFF8DC;
+            border-radius: 12px;
+            padding: 25px;
+            margin: 20px 0;
+            box-shadow: 0 4px 12px rgba(139, 69, 19, 0.1);
+            border: 1px solid #DEB887;
+        }
+        .color-palette {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 25px 0;
+        }
+        .color-card {
+            text-align: center;
+            padding: 20px;
+            border-radius: 12px;
+            color: white;
+            font-weight: bold;
+        }
+        .color-primary { background: #8B4513; }
+        .color-secondary { background: #A0522D; }
+        .color-accent { background: #D2691E; }
+        .color-light { background: #CD853F; }
+        .color-cream { background: #F5E6D3; color: #8B4513; }
+        .color-beige { background: #FFF8DC; color: #8B4513; }
+        
+        .btn {
+            background: #8B4513;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            margin: 10px;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .btn:hover {
+            background: #A0522D;
+            transform: translateY(-2px);
+        }
+        .btn-danger {
+            background: #D2691E;
+        }
+        .btn-danger:hover {
+            background: #B8860B;
+        }
+        h1, h2, h3 {
+            color: #8B4513;
+            text-align: center;
+        }
+        .highlight {
+            background: linear-gradient(135deg, #F4E4BC, #F5E6D3);
+            padding: 25px;
+            border-radius: 15px;
+            border-left: 5px solid #8B4513;
+            margin: 25px 0;
+            text-align: center;
+        }
+        .comparison {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin: 25px 0;
+        }
+        .before, .after {
+            padding: 20px;
+            border-radius: 15px;
+            text-align: center;
+        }
+        .before {
+            background: #E6E6FA;
+            border: 2px solid #9370DB;
+        }
+        .after {
+            background: #F5E6D3;
+            border: 2px solid #8B4513;
+        }
+        .mockup {
+            background: #FFF8DC;
+            border: 2px dashed #DEB887;
+            border-radius: 15px;
+            padding: 30px;
+            margin: 25px 0;
+            text-align: center;
+        }
+        .status-demo {
+            display: inline-block;
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 600;
+            margin: 10px;
+        }
+        .status-published {
+            background: #D4F1D4;
+            color: #2D5016;
+        }
+        .status-draft {
+            background: #F4E4BC;
+            color: #8B4513;
+        }
+        @media (max-width: 768px) {
+            .comparison {
+                grid-template-columns: 1fr;
+            }
+            .container {
+                margin: 10px;
+                padding: 20px;
+            }
+        }
+    </style>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1 style="margin-bottom: 1rem;">
+            <i class="fas fa-palette"></i> Brown Theme Preview
+        </h1>
+        
+        <div class="highlight">
+            <h3><i class="fas fa-paint-brush"></i> Tema Coklat Elegan!</h3>
+            <p>Tampilan Vue.js Article Manager sekarang menggunakan warna coklat yang hangat dan elegan!</p>
+        </div>
+
+        <div class="comparison">
+            <div class="before">
+                <h3><i class="fas fa-times-circle"></i> Sebelum (Ungu)</h3>
+                <ul style="text-align: left;">
+                    <li>Background gradient ungu-biru</li>
+                    <li>Button primary biru</li>
+                    <li>Accent color ungu</li>
+                    <li>Card background putih polos</li>
+                </ul>
+            </div>
+            <div class="after">
+                <h3><i class="fas fa-check-circle"></i> Sesudah (Coklat)</h3>
+                <ul style="text-align: left;">
+                    <li>Background gradient coklat hangat</li>
+                    <li>Button primary coklat tua</li>
+                    <li>Accent color coklat muda</li>
+                    <li>Card background cream/beige</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="preview-section">
+            <h3><i class="fas fa-swatchbook"></i> Color Palette</h3>
+            
+            <div class="color-palette">
+                <div class="color-card color-primary">
+                    <h4>Primary</h4>
+                    <p>#8B4513<br>Saddle Brown</p>
+                </div>
+                <div class="color-card color-secondary">
+                    <h4>Secondary</h4>
+                    <p>#A0522D<br>Sienna</p>
+                </div>
+                <div class="color-card color-accent">
+                    <h4>Accent</h4>
+                    <p>#D2691E<br>Chocolate</p>
+                </div>
+                <div class="color-card color-light">
+                    <h4>Light</h4>
+                    <p>#CD853F<br>Peru</p>
+                </div>
+                <div class="color-card color-cream">
+                    <h4>Background</h4>
+                    <p>#F5E6D3<br>Cream</p>
+                </div>
+                <div class="color-card color-beige">
+                    <h4>Cards</h4>
+                    <p>#FFF8DC<br>Cornsilk</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="preview-section">
+            <h3><i class="fas fa-eye"></i> UI Elements Preview</h3>
+            
+            <div style="text-align: center; margin: 20px 0;">
+                <button class="btn">
+                    <i class="fas fa-plus"></i> Tambah Artikel
+                </button>
+                <button class="btn">
+                    <i class="fas fa-edit"></i> Edit
+                </button>
+                <button class="btn btn-danger">
+                    <i class="fas fa-trash"></i> Delete
+                </button>
+            </div>
+            
+            <div style="text-align: center; margin: 20px 0;">
+                <span class="status-demo status-published">
+                    <i class="fas fa-check-circle"></i> Published
+                </span>
+                <span class="status-demo status-draft">
+                    <i class="fas fa-edit"></i> Draft
+                </span>
+            </div>
+        </div>
+
+        <div class="mockup">
+            <h3><i class="fas fa-desktop"></i> Design Elements</h3>
+            <p><strong>Background:</strong> Gradient coklat dari Saddle Brown ke Chocolate</p>
+            <p><strong>Cards:</strong> Background Cornsilk dengan border Burlywood</p>
+            <p><strong>Buttons:</strong> Saddle Brown dengan hover Sienna</p>
+            <p><strong>Text:</strong> Saddle Brown untuk headings, Sienna untuk content</p>
+            <p><strong>Status:</strong> Hijau untuk Published, Coklat untuk Draft</p>
+        </div>
+
+        <div style="text-align: center; margin: 3rem 0;">
+            <h3>🚀 Test Vue.js App dengan Tema Coklat!</h3>
+            <p>Klik tombol di bawah untuk melihat tampilan baru:</p>
+            
+            <a href="http://localhost/lab8_vuejs/index.html" target="_blank" class="btn">
+                <i class="fas fa-external-link-alt"></i> Buka Vue.js App
+            </a>
+        </div>
+
+        <div class="highlight">
+            <h3><i class="fas fa-heart"></i> Kenapa Coklat?</h3>
+            <p>✨ Warna coklat memberikan kesan hangat dan profesional</p>
+            <p>🎯 Mudah dibaca dan tidak melelahkan mata</p>
+            <p>🌟 Cocok untuk aplikasi produktivitas dan content management</p>
+            <p>💼 Memberikan kesan elegan dan sophisticated</p>
+        </div>
+    </div>
+</body>
+</html>
