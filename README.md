@@ -1,3 +1,4 @@
+
 # Praktikum 7–11 - Pemrograman Website 2
 
 ## 👤 Profil Mahasiswa
@@ -74,7 +75,30 @@ Setelah menghubungkan tabel artikel dengan kategori, kita juga perlu menyesuaika
 Form ini digunakan untuk **menambahkan artikel baru**. Kita akan memodifikasi form agar admin dapat memilih **kategori** artikel dari dropdown yang terhubung dengan tabel `kategori`.
 ![image](https://github.com/user-attachments/assets/a75d52d4-2f53-4b4a-a758-df70d18953f5)
 
+## ✏️ Memodifikasi View: `view/artikel/form_edit.php`
 
+Form ini digunakan untuk **mengedit artikel**. Kita akan menambahkan dropdown kategori dan menampilkan kategori yang sudah dipilih oleh artikel saat ini.
+![image](https://github.com/user-attachments/assets/61913828-f5aa-4843-8472-609bcab4ba13)
 
+## ✅ Testing Fitur Relasi Artikel dan Kategori
 
+Setelah seluruh konfigurasi selesai (tabel, model, controller, dan view), saatnya melakukan **pengujian** untuk memastikan bahwa relasi artikel ↔ kategori berjalan sebagaimana mestinya.
+![image](https://github.com/user-attachments/assets/b33239bf-32ef-4c8e-a8b2-22ba2a8103aa)
 
+## 🧪 Testing: Menambah Artikel Baru dengan Memilih Kategori
+
+Fitur ini menguji apakah proses input artikel baru berhasil menyimpan data **termasuk kategori yang dipilih**, serta apakah relasi artikel ↔ kategori bekerja sesuai harapan.
+![image](https://github.com/user-attachments/assets/4f4c8e5c-2afb-4766-b84e-cc8c763a0e78)
+
+## 🧪 Testing: Mengedit Artikel dan Mengubah Kategorinya
+
+Fitur ini menguji apakah admin dapat mengubah data artikel **termasuk mengganti kategori** yang telah dipilih sebelumnya.
+![image](https://github.com/user-attachments/assets/64f4658d-d993-41f5-9453-d390a948b927)
+
+## 🗑️ Testing: Menghapus Artikel
+
+Fitur ini menguji apakah admin dapat **menghapus artikel** yang sudah ada, dan memastikan data benar-benar terhapus dari database.
+##Sebelum
+![image](https://github.com/user-attachments/assets/2ce937dd-3260-47db-b737-92ca7cb4fbc8)
+##Sesudah
+![image](https://github.com/user-attachments/assets/02e9b806-8a64-46b3-b6dc-aa7235386b8a)
